@@ -29,7 +29,7 @@ set ruler
 set cursorline
 
 " set the indent
-"set smartindent
+set smartindent
 
 " show search matches as the search pattern is typed
 set incsearch
