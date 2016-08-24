@@ -13,4 +13,3 @@ echo "Please type :PluginInstall in vim"
 test -d ~/.vim && mkdir ~/.vim/colors || (mkdir ~/.vim && mkdir ~/.vim/colors)
 cp molokai.vim ~/.vim/colors/
 
-
