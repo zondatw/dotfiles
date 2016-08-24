@@ -29,7 +29,7 @@ set ruler
 set cursorline
 
 " set the indent
-"set smartindent
+set smartindent
 
 " show search matches as the search pattern is typed
 set incsearch
@@ -56,17 +56,14 @@ if exists('$TMUX')
 	  set term=screen-256color
 endif
 
-" ( { [ complete
-":inoremap ( ()<ESC>i
-":inoremap { {<CR>}<ESC>O
-":inoremap [ []<ESC>i
-
 " =================================
 
-" map the <F3>
+" map 
 noremap <F3> :set number!<Cr>
 noremap <F4> :set wrap!<Cr>
-
+noremap <F5> :set paste!<Cr>
+noremap <F6> :NERDTreeToggle<Cr>
+noremap <F7> :TagbarToggle<Cr>
 
 " =================================
 
@@ -84,12 +81,32 @@ filetype off                  " required
 set rtp+=~/.vim/bundle/Vundle.vim/
 call vundle#begin()
 
-Plugin 'gmarik/Vundle.vim'
-Plugin 'scrooloose/nerdtree'
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
-Plugin 'altercation/vim-colors-solarized'
-Plugin 'luochen1990/rainbow'
+	Plugin 'gmarik/Vundle.vim'
+	Plugin 'scrooloose/nerdtree'
+	Plugin 'vim-airline/vim-airline'
+	Plugin 'vim-airline/vim-airline-themes'
+	Plugin 'altercation/vim-colors-solarized'
+	Plugin 'luochen1990/rainbow'
+	Plugin 'L9'             "L9 is required by AutoComplPop
+	Plugin 'othree/vim-autocomplpop'
+	Plugin 'majutsushi/tagbar'
+	Plugin 'tpope/vim-surround'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
+
+
+" airline
+" **********************************************************
+" if open tabline
+if !exists('g:airline_symbols')
+	let g:airline_symbols = {}
+endif
+let g:airline_left_sep = '▶'
+let g:airline_left_alt_sep = '❯'
+let g:airline_right_sep = '◀'
+let g:airline_right_alt_sep = '❮'
+let g:airline_symbols.linenr = '¶'
+let g:airline_symbols.branch = '⎇'
+
+let g:airline#extensions#tabline#enabled = 1
