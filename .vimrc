@@ -59,11 +59,11 @@ endif
 " =================================
 
 " map 
-noremap <F3> :set number!<Cr>
-noremap <F4> :set wrap!<Cr>
-noremap <F5> :set paste!<Cr>
-noremap <F6> :NERDTreeToggle<Cr>
-noremap <F7> :TagbarToggle<Cr>
+noremap <F5> :set number!<Cr>
+noremap <F6> :set wrap!<Cr>
+noremap <F7> :set paste!<Cr>
+noremap <F8> :NERDTreeToggle<Cr>
+noremap <F9> :TagbarToggle<Cr>
 
 " =================================
 
