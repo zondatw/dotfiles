@@ -10,6 +10,9 @@ set encoding=utf-8
 " display number
 set number
 
+" mouse on
+set mouse=a
+
 " no line wrapping
 set nowrap
 
@@ -23,6 +26,9 @@ set background=dark
 
 " set color scheme
 color molokai
+
+" display cursorline for column
+set colorcolumn=120
 
 " display cursor co-ords at all times
 set ruler
@@ -50,6 +56,11 @@ set showcmd
 set laststatus=2
 
 set backspace=indent,eol,start
+
+set nobackup
+set noswapfile
+set nowritebackup
+set scrolloff=3
 
 " set tmux color 256
 if exists('$TMUX')
