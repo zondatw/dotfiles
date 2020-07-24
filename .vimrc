@@ -99,6 +99,10 @@ if exists('$TMUX')
 	  set term=screen-256color
 endif
 
+" show all white spaces as a character
+set listchars=eol:¬,tab:>-,trail:~,extends:>,precedes:<,space:.
+set list
+
 " **********************************************************
 
 
@@ -118,5 +122,3 @@ autocmd FileType python setlocal et sta  sw=4 sts=4 cc=80 completeopt-=preview
 autocmd FileType html setlocal et sw=2 sts=2
 
 " **********************************************************
-
-
