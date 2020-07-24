@@ -8,6 +8,8 @@ call plug#begin('~/.vim/plugged')
 
 	Plug 'vim-scripts/Auto-Pairs'
 	Plug 'scrooloose/nerdtree'
+		" show hidden files
+		let NERDTreeShowHidden=1
 	Plug 'ervandew/supertab'
 		let SuperTabMappingForward="<S-Tab>"
 	Plug 'majutsushi/tagbar'
