@@ -29,6 +29,8 @@ alias egrep="egrep --color=auto"
 
 alias objdump="objdump -M intel"
 
+alias treea="tree -a"
+
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/usr/local/google-cloud-sdk/path.bash.inc' ]; then . '/usr/local/google-cloud-sdk/path.bash.inc'; fi
 
@@ -49,5 +51,5 @@ parse_git_branch() {
      git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
 }
 
-export PS1="\[\033]0;\u@\h:\w\007\]\[\033[01;32m\]\u@\h\[\033[01;34m\] \w \[\033[01;33m\]\$(parse_git_branch)\[\033[01;35m\]\]\$\[\033[00m\] "
+export PS1="\[\033k\u@\h:\w\033\\]\[\033[01;32m\]\u@\h\[\033[01;34m\] \w \[\033[01;33m\]\$(parse_git_branch)\[\033[01;35m\] \\$\[\033[00m\] "
 
