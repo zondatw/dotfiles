@@ -29,6 +29,8 @@ call plug#begin('~/.vim/plugged')
 	Plug 'hdima/python-syntax'
 		let python_highlight_all = 1
 
+	Plugin 'sakshamgupta05/vim-todo-highlight'
+
 	" airline
 	" **********************************************************
 	Plug 'vim-airline/vim-airline'
@@ -62,8 +64,7 @@ filetype plugin indent on
 " basic config
 " **********************************************************
 
-syntax on                                                                                                                                                                                 
-
+syntax on
 let mapleader=" " " leader key
 set t_Co=256 " 256 colors
 color molokai " set color scheme
@@ -98,7 +99,7 @@ set cursorline
 
 " set tmux color 256
 if exists('$TMUX')
-	  set term=screen-256color
+	set term=screen-256color
 endif
 
 " show all white spaces as a character
