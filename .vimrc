@@ -29,7 +29,7 @@ call plug#begin('~/.vim/plugged')
 	Plug 'hdima/python-syntax'
 		let python_highlight_all = 1
 
-	Plugin 'sakshamgupta05/vim-todo-highlight'
+	Plug 'sakshamgupta05/vim-todo-highlight'
 
 	" airline
 	" **********************************************************
