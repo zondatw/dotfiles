@@ -115,6 +115,7 @@ set list
 
 " map 
 " **********************************************************
+noremap <F4> :w !sudo tee %<Cr>
 noremap <F5> :set number!<Cr>
 noremap <F6> :set wrap!<Cr>
 noremap <F7> :set paste!<Cr>
