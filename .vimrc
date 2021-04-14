@@ -110,6 +110,10 @@ endif
 set listchars=eol:¬,tab:>-,trail:~,extends:>,precedes:<,space:.
 set list
 
+" auto reload file
+set autoread
+au FocusGained,BufEnter * :checktime
+
 " **********************************************************
 
 
