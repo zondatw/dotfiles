@@ -31,6 +31,8 @@ alias objdump="objdump -M intel"
 
 alias treea="tree -a"
 
+alias rm="trash-put"
+
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/usr/local/google-cloud-sdk/path.bash.inc' ]; then . '/usr/local/google-cloud-sdk/path.bash.inc'; fi
 
