@@ -132,5 +132,7 @@ noremap <F9> :TagbarToggle<Cr>
 " **********************************************************
 autocmd FileType python setlocal et sta  sw=4 sts=4 cc=80 completeopt-=preview
 autocmd FileType html setlocal et sw=2 sts=2
+autocmd FileType c setlocal et sw=2 sts=2
+autocmd FileType cpp setlocal et sw=2 sts=2
 
 " **********************************************************
