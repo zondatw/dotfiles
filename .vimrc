@@ -59,6 +59,8 @@ call plug#begin('~/.vim/plugged')
 		let g:terraform_align=1
 		let g:terraform_fmt_on_save=1
 
+	Plug 'LnL7/vim-nix'
+
 call plug#end()
 filetype plugin indent on
 
