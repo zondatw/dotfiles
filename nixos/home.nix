@@ -24,6 +24,24 @@
     pkgs.htop
     pkgs.curl
     pkgs.wget
+    pkgs.whois
+
+    # TODO: already in system
+    # pkgs.vim
+    # pkgs.git
+    # pkgs.tree
+    # pkgs vivaldi
+    # pkgs vscode
+    # pkgs.spotify
+    # pkgs.telegram-desktop
+    # pkgs.docker
+    # pkgs.xclip
+    # pkgs.jq
+    # pkgs.chrome
+    # pkgs.ranger
+
+    pkgs.python
+    pkgs.python3
   ];
 
 }
