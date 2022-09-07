@@ -43,8 +43,18 @@
     # pkgs.chrome
     # pkgs.ranger
 
+    # compiler
+    pkgs.llvm
+
+    # c
+    pkgs.gcc
+
+    # python
     pkgs.python
     pkgs.python3
-  ];
 
+    # rust
+    pkgs.cargo
+    pkgs.rustc
+  ];
 }
