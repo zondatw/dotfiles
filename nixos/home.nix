@@ -25,6 +25,9 @@
     pkgs.curl
     pkgs.wget
     pkgs.whois
+    pkgs.screenfetch
+    pkgs.spectacle
+    pkgs.flameshot
 
     # TODO: already in system
     # pkgs.vim
