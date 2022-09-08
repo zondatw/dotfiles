@@ -28,6 +28,15 @@
     pkgs.screenfetch
     pkgs.spectacle
     pkgs.flameshot
+    pkgs.file
+    pkgs.libreoffice
+
+    # devtools
+    pkgs.postman
+    pkgs.qemu
+    pkgs.nmap
+    pkgs.netcat
+    pkgs.docker-compose
 
     # TODO: already in system
     # pkgs.vim
@@ -45,9 +54,15 @@
 
     # compiler
     pkgs.llvm
+    pkgs.cmake
+    pkgs.gnumake
+    pkgs.ninja
+    # pkgs.binutils.bintools
 
     # c
     pkgs.gcc
+    pkgs.gdb
+    # pkgs.clang
 
     # python
     pkgs.python
