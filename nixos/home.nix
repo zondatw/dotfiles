@@ -30,6 +30,7 @@
     pkgs.flameshot
     pkgs.file
     pkgs.libreoffice
+    pkgs.bind
 
     # devtools
     pkgs.postman
@@ -37,6 +38,7 @@
     pkgs.nmap
     pkgs.netcat
     pkgs.docker-compose
+    pkgs.insomnia
 
     # TODO: already in system
     # pkgs.vim
