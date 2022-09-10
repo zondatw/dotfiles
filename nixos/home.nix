@@ -50,6 +50,8 @@
     pkgs.docker-compose
     pkgs.insomnia
     pkgs.vim
+    pkgs.ctags
+    pkgs.tmux-mem-cpu-load
     pkgs.tmux
     pkgs.git
     pkgs.vscode
