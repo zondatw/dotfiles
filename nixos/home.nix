@@ -33,6 +33,14 @@
     pkgs.file
     pkgs.libreoffice
     pkgs.bind
+    pkgs.tree
+    pkgs.vivaldi
+    pkgs.spotify
+    pkgs.tdesktop
+    pkgs.xclip
+    pkgs.jq
+    pkgs.google-chrome
+    pkgs.ranger
 
     # devtools
     pkgs.postman
@@ -41,20 +49,11 @@
     pkgs.netcat
     pkgs.docker-compose
     pkgs.insomnia
-
-    # TODO: already in system
-    # pkgs.vim
-    # pkgs.git
-    # pkgs.tree
-    # pkgs vivaldi
-    # pkgs vscode
-    # pkgs.spotify
-    # pkgs.telegram-desktop
-    # pkgs.docker
-    # pkgs.xclip
-    # pkgs.jq
-    # pkgs.chrome
-    # pkgs.ranger
+    pkgs.vim
+    pkgs.tmux
+    pkgs.git
+    pkgs.vscode
+    pkgs.docker
 
     # compiler
     pkgs.llvm
