@@ -59,10 +59,10 @@
     pkgs.cmake
     pkgs.gnumake
     pkgs.ninja
-    # pkgs.binutils.bintools
+    pkgs.binutils.bintools
 
     # c
-    pkgs.gcc
+    # pkgs.gcc # FIXME: workaround install in system
     pkgs.gdb
     # pkgs.clang
 
