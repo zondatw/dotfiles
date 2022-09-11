@@ -16,6 +16,7 @@ nix-shell '<home-manager>' -A install
 soft link about config file  
 
 ```shell
+cd ~/.config/nixpkgs/
 ln -s ~/Projects/dotfiles/nixos/home.nix home.nix
 ```
 
