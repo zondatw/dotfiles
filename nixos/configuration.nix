@@ -43,6 +43,19 @@
     LC_TIME = "zh_TW.utf8";
   };
 
+  # Input method
+  i18n = {
+    inputMethod = {
+      enabled = "fcitx5";
+      fcitx5.addons = with pkgs; [
+        fcitx5-mozc
+        fcitx5-chinese-addons
+        fcitx5-gtk
+        fcitx5-chewing
+      ];
+    };
+  };
+
   # Enable the X11 windowing system.
   services.xserver.enable = true;
 
@@ -52,8 +65,8 @@
 
   # Configure keymap in X11
   services.xserver = {
-    layout = "us";
-    xkbVariant = "";
+    layout = "tw";
+    xkbVariant = "indigenous";
   };
 
   # Enable CUPS to print documents.
@@ -131,5 +144,4 @@
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "22.05"; # Did you read the comment?
-
 }
