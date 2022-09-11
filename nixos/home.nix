@@ -56,6 +56,8 @@
     pkgs.git
     pkgs.vscode
     pkgs.docker
+    pkgs.tcpdump
+    pkgs.wireshark
 
     # compiler
     pkgs.llvm
