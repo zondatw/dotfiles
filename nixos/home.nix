@@ -74,6 +74,7 @@
     # python
     pkgs.python
     pkgs.python3
+    pkgs.python3.pkgs.pip
 
     # rust
     pkgs.cargo
