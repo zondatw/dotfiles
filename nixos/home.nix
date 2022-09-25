@@ -65,6 +65,9 @@
     pkgs.gnumake
     pkgs.ninja
     pkgs.binutils
+    pkgs.bison
+    pkgs.m4
+    pkgs.flex
 
     # c
     pkgs.gcc
