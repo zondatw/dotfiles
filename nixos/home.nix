@@ -58,6 +58,9 @@
     pkgs.docker
     pkgs.tcpdump
     pkgs.wireshark
+    pkgs.ffmpeg
+    pkgs.bless
+    pkgs.ngrok
 
     # compiler
     pkgs.llvm
@@ -68,6 +71,8 @@
     pkgs.bison
     pkgs.m4
     pkgs.flex
+    pkgs.zlib
+    pkgs.zlib.dev
 
     # c
     pkgs.gcc
