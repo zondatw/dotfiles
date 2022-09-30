@@ -41,6 +41,7 @@
     pkgs.jq
     pkgs.google-chrome
     pkgs.ranger
+    pkgs.zip
 
     # devtools
     pkgs.postman
@@ -63,6 +64,9 @@
     pkgs.ngrok
     pkgs.vlc
     pkgs.minikube
+    pkgs.qtractor
+    pkgs.qjackctl
+    pkgs.ardour
 
     # compiler
     pkgs.llvm
