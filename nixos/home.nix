@@ -61,6 +61,8 @@
     pkgs.ffmpeg
     pkgs.bless
     pkgs.ngrok
+    pkgs.vlc
+    pkgs.minikube
 
     # compiler
     pkgs.llvm
