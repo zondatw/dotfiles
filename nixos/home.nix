@@ -43,6 +43,13 @@
     pkgs.ranger
     pkgs.zip
 
+    # audio
+    pkgs.ardour
+    pkgs.qtractor
+    pkgs.qjackctl
+    pkgs.ffmpeg
+    pkgs.vlc
+
     # devtools
     pkgs.postman
     pkgs.qemu
@@ -59,14 +66,9 @@
     pkgs.docker
     pkgs.tcpdump
     pkgs.wireshark
-    pkgs.ffmpeg
     pkgs.bless
     pkgs.ngrok
-    pkgs.vlc
     pkgs.minikube
-    pkgs.qtractor
-    pkgs.qjackctl
-    pkgs.ardour
 
     # compiler
     pkgs.llvm
