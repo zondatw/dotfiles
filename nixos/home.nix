@@ -81,6 +81,8 @@
     pkgs.flex
     pkgs.zlib
     pkgs.zlib.dev
+    pkgs.stack
+    pkgs.gettext
 
     # c
     pkgs.gcc
