@@ -69,6 +69,7 @@
     pkgs.bless
     pkgs.ngrok
     pkgs.minikube
+    pkgs.conan
 
     # compiler
     pkgs.llvm
