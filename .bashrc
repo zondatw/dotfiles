@@ -10,8 +10,8 @@
 # past this point for scp and rcp, and it's important to refrain from
 # outputting anything in those cases.
 if [[ $- != *i* ]] ; then
-	# Shell is non-interactive.  Be done now!
-	return
+    # Shell is non-interactive.  Be done now!
+    return
 fi
 
 
@@ -50,8 +50,40 @@ export TERM="xterm-256color"
 
 # customerize PS1
 parse_git_branch() {
-     git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
+    git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
 }
 
-export PS1="\[\033[01;32m\]\u@\h\[\033[01;34m\] \w \[\033[01;33m\]\$(parse_git_branch)\[\033[01;35m\] \\$\[\033[00m\] "
+parse_license() {
+    file_path="LICENSE"
+    if [ ! -f "$file_path" ]; then
+        return
+    fi
+    file_content="`cat $file_path | paste -sd ''`"
+    license_map=( "Apache License 2.0:Apache License, Version 2.0"
+                  "GPL v3.0:version 3 of the GNU General Public License"
+                  "BSD 2-Clause:BSD 2-Clause License"
+                  "BSD 3-Clause:BSD 3-Clause License"
+                  "Boost Software 1.0:Boost Software License - Version 1.0"
+                  "Creative Commons Zero v1.0:Creative Commons Legal Code"
+                  "Eclipse Public 2.0:Eclipse Public License - v 2.0"
+                  "Affero GPL v3.0:version 3 of the GNU Affero General Public License"
+                  "GPL v2.0:General Public License as published by the Free Software Foundation; either version 2 of the License"
+                  "GPL v2.0:GNU General Public License as published by    the Free Software Foundation; either version 2"
+                  "Lesser GPL v2.1:GNU Library Public License, version 2, hence the version number 2.1"
+                  "Mozilla Public 2.0:Mozilla Public License, v. 2.0"
+                  "MIT:MIT License" )
+
+    license_name="Unknown"
+    for license_setting in "${license_map[@]}" ; do
+        key="${license_setting%%:*}"
+        value="${license_setting##*:}"
+        if [[ "$file_content" == *"$value"* ]]; then
+            license_name=$key
+            break
+        fi
+    done
+    printf "[%s]" "$license_name"
+}
+
+export PS1="\[\033[01;32m\]\u@\h\[\033[01;34m\] \w \[\033[01;33m\]\$(parse_license)\[\033[01;35m\]\[\033[01;33m\]\$(parse_git_branch)\[\033[01;35m\] \\$\[\033[00m\] "
 
