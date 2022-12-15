@@ -47,6 +47,17 @@ fi
 # tmux color 256
 export TERM="xterm-256color"
 
+print_colors() {
+    for x in {0..8}; do
+        for i in {30..37}; do
+            for a in {40..47}; do
+                echo -ne "\e[$x;$i;$a""m\\\e[$x;$i;$a""m\e[0;37;40m "
+            done
+            echo
+        done
+    done
+    echo ""
+}
 
 # customerize PS1
 parse_git_branch() {
