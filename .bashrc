@@ -58,7 +58,7 @@ parse_license() {
     if [ ! -f "$file_path" ]; then
         return
     fi
-    file_content="`cat $file_path | paste -sd ''`"
+    file_content="`cat $file_path | tr '\n' ' '`"
     license_map=( "Apache License 2.0:Apache License, Version 2.0"
                   "GPL v3.0:version 3 of the GNU General Public License"
                   "BSD 2-Clause:BSD 2-Clause License"
@@ -85,5 +85,5 @@ parse_license() {
     printf "[%s]" "$license_name"
 }
 
-export PS1="\[\033[01;32m\]\u@\h\[\033[01;34m\] \w \[\033[01;33m\]\$(parse_license)\[\033[01;35m\]\[\033[01;33m\]\$(parse_git_branch)\[\033[01;35m\] \\$\[\033[00m\] "
+export PS1="\[\033[01;32m\]\u@\h\[\033[01;34m\] \w \[\033[01;35m\]\$(parse_license)\[\033[01;35m\]\[\033[01;33m\]\$(parse_git_branch)\[\033[01;35m\] \\$\[\033[00m\] "
 
