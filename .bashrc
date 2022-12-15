@@ -58,7 +58,7 @@ parse_license() {
     if [ ! -f "$file_path" ]; then
         return
     fi
-    file_content="`cat $file_path | paste -sd ''`"
+    file_content="`cat $file_path | tr -sd ''`"
     license_map=( "Apache License 2.0:Apache License, Version 2.0"
                   "GPL v3.0:version 3 of the GNU General Public License"
                   "BSD 2-Clause:BSD 2-Clause License"
