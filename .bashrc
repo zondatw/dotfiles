@@ -96,5 +96,5 @@ parse_license() {
     printf "[%s]" "$license_name"
 }
 
-export PS1="\[\e[01;32m\]\u@\h\[\e[01;34m\] \w \[\e[01;35m\]\$(parse_license)\[\e[01;35m\]\[\e[01;33m\]\$(parse_git_branch)\[\e[1;30m\] \\$\[\e[00m\] "
+export PS1="\[\e[1;30m\]\t\[\e[00m\] \[\e[01;32m\]\u@\h\[\e[01;34m\] \w \[\e[01;35m\]\$(parse_license)\[\e[01;35m\]\[\e[01;33m\]\$(parse_git_branch)\[\e[1;30m\]\n\\$\[\e[00m\] "
 
