@@ -68,7 +68,7 @@ parse_license() {
                   "Eclipse Public 2.0:Eclipse Public License - v 2.0"
                   "Affero GPL v3.0:version 3 of the GNU Affero General Public License"
                   "GPL v2.0:General Public License as published by the Free Software Foundation; either version 2 of the License"
-                  "GPL v2.0:GNU General Public License as published by    the Free Software Foundation; either version 2"
+                  "GPL v2.0:GNU General Public License as published by     the Free Software Foundation; either version 2"
                   "Lesser GPL v2.1:GNU Library Public License, version 2, hence the version number 2.1"
                   "Mozilla Public 2.0:Mozilla Public License, v. 2.0"
                   "MIT:MIT License" )
