@@ -61,7 +61,37 @@ print_colors() {
 
 # customerize PS1
 parse_git_branch() {
-    git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
+    git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/'
+}
+
+parse_git_change() {
+    stage_num=$(git diff --name-only --cached --diff-filter=AM | wc -l)
+    unstage_num=$(git diff --name-only --diff-filter=AM | wc -l)
+    if [[ "$stage_num" -ne 0 ]] || [[ "$unstage_num" -ne 0 ]]; then
+        printf " \e[01;33m|\e[00m"
+    fi
+    if [[ "$stage_num" -ne 0 ]]; then
+        printf " \e[0;32m+%s" "$stage_num"
+    fi
+    if [[ "$unstage_num" -ne 0 ]]; then
+        printf " \e[0;31m+%s" "$unstage_num"
+    fi
+}
+
+check_in_git_repo() {
+    git_dir=$( git rev-parse --git-dir 2>/dev/null)
+    if [[ -z $git_dir ]]; then
+        false
+    else
+        true
+    fi
+}
+
+ps1_git() {
+    check_in_git_repo
+    if [[ $? -eq true ]]; then
+        printf "\e[01;33m( %s\e[00m%s \e[01;33m)\e[00m" "$(parse_git_branch)" "$(parse_git_change)"
+    fi
 }
 
 parse_license() {
@@ -96,5 +126,5 @@ parse_license() {
     printf "[%s]" "$license_name"
 }
 
-export PS1="\[\e[1;30m\]\t\[\e[00m\] \[\e[01;32m\]\u@\h\[\e[01;34m\] \w \[\e[01;35m\]\$(parse_license)\[\e[01;35m\]\[\e[01;33m\]\$(parse_git_branch)\[\e[1;30m\]\n\\$\[\e[00m\] "
+export PS1="\[\e[1;30m\]\t\[\e[00m\] \[\e[01;32m\]\u@\h\[\e[01;34m\] \w \[\e[01;35m\]\$(parse_license)\[\e[01;35m\]\[\e[01;33m\]\$(ps1_git)\[\e[1;30m\]\n\\$\[\e[00m\] "
 
