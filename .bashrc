@@ -65,8 +65,8 @@ parse_git_branch() {
 }
 
 parse_git_change() {
-    stage_num=$(git diff --name-only --cached --diff-filter=AM | wc -l)
-    unstage_num=$(git diff --name-only --diff-filter=AM | wc -l)
+    stage_num=$(git diff --name-only --cached --diff-filter=AM | wc -l | sed -e 's/^[[:space:]]*//'``)
+    unstage_num=$(git diff --name-only --diff-filter=AM | wc -l | sed -e 's/^[[:space:]]*//'``)
     if [[ "$stage_num" -ne 0 ]] || [[ "$unstage_num" -ne 0 ]]; then
         printf " \e[01;33m|\e[00m"
     fi
