@@ -70,9 +70,10 @@
     pkgs.ngrok
     pkgs.minikube
     pkgs.conan
-    pkgs.perf-tools
     pkgs.numactl
     pkgs.virtualbox
+    pkgs.bcc
+    pkgs.flamegraph
 
     # compiler
     pkgs.llvm
