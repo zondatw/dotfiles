@@ -74,6 +74,7 @@
     pkgs.virtualbox
     pkgs.bcc
     pkgs.flamegraph
+    pkgs.flutter
 
     # compiler
     pkgs.llvm
