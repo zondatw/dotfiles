@@ -41,7 +41,11 @@
     pkgs.jq
     pkgs.google-chrome
     pkgs.ranger
+    pkgs.flatpak
+    pkgs.bottles
     pkgs.zip
+    pkgs.fuse
+    pkgs.ntfs3g
 
     # audio
     pkgs.ardour
