@@ -126,6 +126,11 @@
   #  wget
     docker
   ];
+  virtualisation.virtualbox.host.enable = true;
+  users.extraGroups.vboxusers.members = [ "user-with-access-to-virtualbox"];
+  virtualisation.virtualbox.host.enableExtensionPack = true;
+
+  boot.supportedFilesystems = ["ntfs"];
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
