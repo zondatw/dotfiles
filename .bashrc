@@ -157,5 +157,14 @@ parse_license() {
     printf "[%s]" "$license_name"
 }
 
+x509_info() {
+    filename=$1
+    if [ -f "$filename" ]; then
+        openssl x509 -in $filename -noout -text
+    else
+        echo "$filename not exist"
+    fi
+}
+
 export PS1="\[\e[1;30m\]\t\[\e[00m\] \[\e[01;32m\]\u@\h\[\e[01;34m\] \w \[\e[01;35m\]\$(parse_license)\[\e[01;35m\]\[\e[01;33m\]\$(ps1_git)\[\e[1;30m\]\n\\$\[\e[00m\] "
 
