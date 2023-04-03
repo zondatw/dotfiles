@@ -98,7 +98,8 @@ parse_git_branch() {
 parse_git_change() {
     stage_num=$(git diff --name-only --cached --diff-filter=AM | wc -l | sed -e 's/^[[:space:]]*//'``)
     unstage_num=$(git diff --name-only --diff-filter=AM | wc -l | sed -e 's/^[[:space:]]*//'``)
-    if [[ "$stage_num" -ne 0 ]] || [[ "$unstage_num" -ne 0 ]]; then
+    unadded_num=$(git ls-files --others --exclude-standard | wc -l | sed -e 's/^[[:space:]]*//'``)
+    if [[ "$stage_num" -ne 0 ]] || [[ "$unstage_num" -ne 0 ]] || [[ "$unadded_num" -ne 0 ]]; then
         printf " \e[01;33m|\e[00m"
     fi
     if [[ "$stage_num" -ne 0 ]]; then
@@ -106,6 +107,9 @@ parse_git_change() {
     fi
     if [[ "$unstage_num" -ne 0 ]]; then
         printf " \e[0;31m+%s" "$unstage_num"
+    fi
+    if [[ "$unadded_num" -ne 0 ]]; then
+        printf " \e[0;36m+%s" "$unadded_num"
     fi
 }
 
