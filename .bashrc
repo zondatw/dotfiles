@@ -75,6 +75,8 @@ if [ -d "$HOME/.local/bin" ] ; then
     PATH="$HOME/.local/bin:$PATH"
 fi
 
+PATH="$HOME/.zonda_bin:$PATH"
+
 # tmux color 256
 export TERM="xterm-256color"
 
