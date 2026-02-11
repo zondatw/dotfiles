@@ -42,6 +42,21 @@ alias cat="bat"
 
 alias rm="trash-put"
 
+alias kubectl="kubecolor"
+
+# return to root dir of git's repo
+gr() {
+    local root_dir
+    root_dir=$(git rev-parse --show-toplevel 2>/dev/null)
+
+    if [ -n "$root_dir" ]; then
+        cd "$root_dir" || return
+    else
+        echo -e "\033[0;31mError: Not a git repository (or any of the parent directories)\033[0m"
+        return 1
+    fi
+}
+
 #
 # # ex - archive extractor
 # # usage: ex <file>
