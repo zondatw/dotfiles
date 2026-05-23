@@ -94,6 +94,10 @@ if [ -d "$HOME/.local/bin" ] ; then
 fi
 
 PATH="$HOME/.zonda_bin:$PATH"
+PATH="$PATH:~/.cargo/bin/"
+PATH="$PATH:$HOME/.local/bin"
+ANDROID_HOME=$HOME/Library/Android/sdk
+PATH="$PATH:$ANDROID_HOME/platform-tools"
 
 # tmux color 256
 export TERM="xterm-256color"
@@ -195,6 +199,8 @@ export PS1="\[\e[1;30m\]\t\[\e[00m\] \[\e[01;32m\]\u@\h\[\e[01;34m\] \w \[\e[01;
 . "$HOME/.cargo/env"
 
 eval "$(pyenv init -)"
+
+PATH=$PATH:$(go env GOPATH)/bin
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
